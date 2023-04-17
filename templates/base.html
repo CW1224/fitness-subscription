@@ -32,7 +32,7 @@
   </head>
   <body>
     <header class="container-fluid fixed-top"></header>
-      <div class="row">
+      <div id="topnav" class="row bg-white pt-lg-0 text-center text-lg-left">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="logo-font text-black my-0"><strong>Fitness</strong> Madness</h2>
@@ -78,7 +78,7 @@
                   <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                   <p class="my-0">
                     {% if grand_total %}
-                      ${{ grand_total}{floatformat:2 }}
+                      ${{ grand_total|floatformat:2 }}
                     {% else %}
                       $0.00
                     {% endif %}
