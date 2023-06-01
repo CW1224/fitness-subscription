@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k@v64)hyjh4kczomn=k#0f=hng8%ks+edpoanr4u_l&c8(y)mc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-cw1224-fitnesssubscript-j8idd0zlep5.ws-eu98.gitpod.io']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'favourites',
 
     #Other
     'crispy_forms',
