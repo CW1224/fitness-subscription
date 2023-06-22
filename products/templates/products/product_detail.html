@@ -2,6 +2,12 @@
 {% load static %}
 
 {% block page_header %}
+    <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        {% include 'includes/main-nav.html' %}
+    </nav>
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -14,7 +20,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+                <div class="image-container my-5 bg-white">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
