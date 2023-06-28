@@ -36,10 +36,9 @@
     <title>Fitness Madness {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    {% block header %}
-    {% endblock %}
-    <header class="container-fluid fixed-top"></header>
-      <div id="topnav" class="rowpt-lg-2 d-none d-lg-flex bg-white">
+    <header class="container-fluid fixed-top p-0 m-0">
+      {% include 'includes/page-nav.html' %}
+      <div id="topnav" class="pt-lg-2 d-none d-lg-flex bg-white">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="logo-font text-black my-0"><strong class="text-red">Fitness</strong> Madness</h2>
@@ -97,6 +96,14 @@
           </ul>
         </div>
       </div>
+      <div class="d-lg-none text-center">
+        {% include 'includes/mobile-logo.html' %}
+      </div>
+      {% block mobile_nav %}
+      {% endblock %}
+      {% block delivery_banner %}
+      {% endblock%}
+    </header>
 
     {% if messages %}
         <div class="message-container">
@@ -116,9 +123,6 @@
         </div>
     {% endif %}
 
-    {% block mobile_nav %}
-    {% endblock %}
-
     {% block page_header %}
     {% endblock %}
 
@@ -131,7 +135,7 @@
     </script>
     {% endblock %}
     <!-- Footer -->
-    <footer class="footer container-fluid text-white mt-auto bg-black">
+    <footer class="footer container-fluid text-white mt-auto bg-black px-0">
       <div class="row w-100 m-0 p-0">
         <div class="col-md-4 px-0 py-4 px-md-4">
           <h4 class="mb-3">Madness Fitness</h4>
