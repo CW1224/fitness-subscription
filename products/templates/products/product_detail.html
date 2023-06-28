@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <nav class="navbar navbar-expand-lg navbar-light w-100">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        {% include 'includes/main-nav.html' %}
+{% block header %}
+    {% include 'includes/page-nav.html' %}
+{% endblock %}
+
+{% block mobile_nav %}
+    <nav class="navbar navbar-expand-lg navbar-light w-100 px-auto">
+        {% include 'includes/mobile-top-header.html' %}
     </nav>
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
@@ -25,10 +21,12 @@
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
+                        
                         {% else %}
                         <a href="">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
+                        
                     {% endif %}
                 </div>
             </div>
@@ -111,15 +109,6 @@
                             {% endwith %}
                         </div>
                     </form>
-                    <!-- Add/remove from favorites link -->
-                    {% if request.user.is_authenticated %}
-                    <a class="favorite-link link-blue" href="{% url 'add_to_favorites' product.id %}">
-                        {% if favorite %}
-                            <i class="fas fa-heart"></i>
-                        {% else %}
-                            <i class="far fa-heart"></i>
-                        {% endif %}
-                    {% endif %}
                     </a>
                 </div>
             </div>

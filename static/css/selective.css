@@ -4,10 +4,16 @@ html {
 
 body {
     background-color: rgb(202, 255, 152);
+    margin: 0;
+    padding: 0;
 }
 
 .text-red {
     color:red;
+}
+
+.small {
+    font-size: small;
 }
 
 /* from Bulma */
@@ -289,4 +295,5 @@ input[name='q']::placeholder {
     body {
         height: calc(100vh - 116px);
     }
+
 }

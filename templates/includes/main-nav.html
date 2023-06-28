@@ -11,8 +11,16 @@
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
-        <li class="nav-item">
-            <a href="{% url 'products' %}?category=mealplans" class="logo-font font-weight-bold nav-link text-black mr-5">Meal plans</a>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Meal Plans
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?category=breakfast_meals,lunch_meals,dinner_meals" class="dropdown-item">All Meal Plans</a>
+                <a href="{% url 'products' %}?category=breakfast_meals" class="dropdown-item">Breakfast</a>
+                <a href="{% url 'products' %}?category=lunch_meals" class="dropdown-item ">Lunch</a>
+                <a href="{% url 'products' %}?category=dinner_meals" class="dropdown-item ">Dinner</a>
+            </div>
         </li>
         <li class="nav-item">
             <a href="{% url 'products' %}?category=ladies_clothing" class="logo-font font-weight-bold nav-link text-black mr-5">Ladies' Clothing</a>
@@ -21,10 +29,10 @@
             <a href="{% url 'products' %}?category=gents_clothing" class="logo-font font-weight-bold nav-link text-black mr-5">Mens' Clothing</a>
         </li> 
         <li class="nav-item">
-            <a href="{% url 'products' %}?category=membership_deals" class="logo-font font-weight-bold nav-link text-black mr-5">Meal plans</a>
+            <a href="{% url 'products' %}?category=membership_deals" class="logo-font font-weight-bold nav-link text-black mr-5">Membership deals</a>
         </li>
         <li class="nav-item">
-            <a href="{% url 'products' %}?category=sjoes_and_footwear" class="logo-font font-weight-bold nav-link text-black mr-5">Footwear and Shoes</a>
+            <a href="{% url 'products' %}?category=shoes_and_footwear" class="logo-font font-weight-bold nav-link text-black mr-5">Footwear</a>
         </li>
         <li class="nav-item">
             <a href="{% url 'products' %}?category=gym_equipments" class="logo-font font-weight-bold nav-link text-black mr-5">Equipments</a>

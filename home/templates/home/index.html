@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block header %}
+<div id="delivery-banner" class="row w-100 text-center">
+    <div class="col bg-black text-white">
+        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+    </div>            
+</div>
+{% endblock %}
+
 {% block page_header %}
     {% include 'includes/page-nav.html' %}
     <div class="container header-container">

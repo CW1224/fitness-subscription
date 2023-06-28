@@ -1,17 +1,8 @@
-<div class="navbar"  id="page-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item">
-            <a href="{% url 'home' %}" class="logo-font font-weight-bold nav-link text-black mr-5">Home</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item">
-            <a href="{% url 'about' %}" class="logo-font font-weight-bold nav-link text-black mr-5">About</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item">
-            <a href="{% url 'contact' %}" class="logo-font font-weight-bold nav-link text-black mr-5">Contact</a>
-        </li>
-    </ul>
+<div class="navbar bg-black navbar-expand w-100"  id="page-nav">
+    <div class="navbar-nav">
+        <a href="{% url 'home' %}" class="logo-font font-weight-bold nav-item nav-link text-white">Home</a>
+        <a href="{% url 'about' %}" class="logo-font font-weight-bold nav-item nav-link text-white">About</a>
+        <a href="{% url 'contact' %}" class="logo-font font-weight-bold nav-item nav-link text-white">Contact</a>
+        <a href="{% url 'products' %}" class="logo-font font-weight-bold nav-item nav-link text-white">Products</a>
+    </div>
 </div>
