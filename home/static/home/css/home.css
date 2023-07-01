@@ -1,0 +1,25 @@
+body {
+    background-image: ;
+}
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 200px;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+/* Medias queries */
+
+/* Small screens sizes and down */
+@media (max-width: 768px) {
+
+    .delivery-size {
+        font-size: 1rem;
+    }
+
+    
+} 

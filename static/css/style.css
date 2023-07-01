@@ -12,6 +12,10 @@ body {
     color:red;
 }
 
+.bg-red {
+    background-color: red;
+}
+
 .small {
     font-size: small;
 }
@@ -25,18 +29,14 @@ body {
     width: 1.5rem;
 }
 
+
+
 .logo-font {
     text-transform: uppercase;
 }
 
 .main-logo-link {
     width: fit-content;
-}
-
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
 }
 
 .btn-black {
