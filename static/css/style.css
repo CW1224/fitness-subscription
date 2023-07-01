@@ -8,16 +8,22 @@ body {
     padding: 0;
 }
 
-.text-red {
-    color:red;
+.title-logo {
+    color:rgb(77, 222, 77);
 }
 
 .bg-red {
     background-color: red;
 }
 
+/* Font size adjustments */
+
 .small {
     font-size: small;
+}
+
+.large {
+    font-size: large;
 }
 
 /* from Bulma */
