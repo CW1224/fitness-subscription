@@ -2,20 +2,37 @@ body {
     background: url("/media/background-image.jpg")no-repeat center center fixed;
 }
 
+/* Index Page*/
+
 .shop-now-button {
     background: black;
     color: white;
     min-width: 200px;
 }
 
-.bg-yellow {
-    background-color: yellow;
+/* Contact Page */
+
+/* About Page */
+
+.about-info {
+    font-size: 1.5rem;
+}
+
+.icon-info {
+    font-size: 3rem;
+}
+
+.guide-info {
+    font-size: 1.5rem;
 }
 
 /* Medias queries */
 
 /* Small screens sizes and down */
 @media (max-width: 768px) {
+
+
+    /* Index Page*/
 
     .delivery-size {
         font-size: 1rem;
@@ -27,6 +44,12 @@ body {
         padding:0;
         margin: 2;
         font-size: small;
+    }
+
+    /* About Page */
+
+    .about-info {
+        font-size: 1rem;
     }
     
 } 
