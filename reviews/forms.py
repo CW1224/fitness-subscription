@@ -1,11 +1,11 @@
 from django import forms
 from .models import Review
 
-RATINGS = [(1, 'Very bad'),
-           (2, 'Bad'),
-           (3, 'Ok'),
+RATINGS = [(1, 'Very Bad'),
+           (2, 'Not great'),
+           (3, 'Not too bad'),
            (4, 'Good'),
-           (5, 'Great!')]
+           (5, 'Amazing')]
 
 
 class ReviewForm(forms.ModelForm):
@@ -14,6 +14,6 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ('title', 'content', 'rating')
 
-    rating = forms.ChoiceField(label='How will you rate this product?',
+    rating = forms.ChoiceField(label='How will you rate your experience with this product?',
                                choices=RATINGS,
                                widget=forms.RadioSelect)

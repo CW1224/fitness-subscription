@@ -148,7 +148,8 @@
                                     <p class="c--light-blue"><i class="fas fa-star me-1"></i>{{ review.rating }} / 5</p>
                                     <p class="text-muted d-inline small">By {{ review.author }} on {{ review.created_on }}</p>
                                     {% if review.author == request.user %}
-                                        
+                                    <a href="{% url 'edit_review' review.id %}" class="btn btn-main hvr-back-pulse">
+                                        <span class="text-uppercase">Edit Review</span>
                                     {% endif %}
                                 </div>
                             {% endfor %}

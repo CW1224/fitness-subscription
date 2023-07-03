@@ -13,7 +13,7 @@ class Review(models.Model):
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name='product_reviews')
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=50)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     rating = models.IntegerField(validators=[MinValueValidator(1),
