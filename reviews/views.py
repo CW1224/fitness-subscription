@@ -58,7 +58,7 @@ def add_review(request, product_id):
 
 @login_required
 def edit_review(request, review_id):
-    """ Display form to edit a review """
+    # Form that will allow user to edit review
     review = get_object_or_404(Review, pk=review_id)
 
     if request.user != review.author:
@@ -92,11 +92,27 @@ def edit_review(request, review_id):
 
     return render(request, template, context)
 
+@login_required
+def delete_review(request, review_id):
+
+    review = get_object_or_404(Review, pk=review_id)
+
+    if request.user != review.author:
+        messages.error(request, 'Only the author of the review can edit this')
+        return redirect(reverse('product_detail', args=[review.product.id]))
+
+    """ Delete review of the user """
+
+    review.delete()
+    messages.success(request, 'Review deleted!')
+
+    return redirect(reverse('product_detail', args=[review.product.id]))
+
 def update_product_rating(product):
     """ Update the rating field for the product """
 
     total_reviews = Review.objects.filter(product=product)
-    numberr_of_total_reviews = total_reviews.count()
+    number_of_total_reviews = total_reviews.count()
     ratings_sum = 0
 
     if number_of_total_reviews <= 0:
@@ -105,6 +121,6 @@ def update_product_rating(product):
         for review in total_reviews:
             ratings_sum += review.rating
 
-        product.rating = ratings_sum / nr_of_total_reviews
+        product.rating = ratings_sum / number_of_total_reviews
 
     product.save()
