@@ -8,7 +8,7 @@ from .forms import ReviewForm
 
 def show_reviews(request):
     """ A view to show the user's product reviews """
-    reviews = review.objects.filter(author=request.user)
+    reviews = Review.objects.filter(author=request.user)
 
     template = 'reviews/reviews.html'
 
@@ -75,7 +75,7 @@ def edit_review(request, review_id):
 
             return redirect(reverse('product_detail',
                             args=[review.product.id]))
-                            
+
         else:
             messages.error(request, 'Failed to update your review. \
                 Please ensure the form is valid.')
