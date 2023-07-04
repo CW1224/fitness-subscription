@@ -75,6 +75,7 @@ def edit_review(request, review_id):
 
             return redirect(reverse('product_detail',
                             args=[review.product.id]))
+                            
         else:
             messages.error(request, 'Failed to update your review. \
                 Please ensure the form is valid.')
