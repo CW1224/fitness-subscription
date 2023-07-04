@@ -302,4 +302,10 @@ input[name='q']::placeholder {
         height: calc(100vh - 116px);
     }
 
+    /* Reduce size of title on navigation link on smaller screens */
+
+    .small_nav_title {
+        font-size: small;
+    }
+
 }
