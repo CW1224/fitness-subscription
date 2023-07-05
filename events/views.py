@@ -33,12 +33,12 @@ def event_detail(request, event_id):
 @login_required
 def add_event(request):
 
-    """ Add an event """
     """ Check if the user is a superuser or not """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
+    """ Add an event """
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
@@ -59,16 +59,16 @@ def add_event(request):
 
 @login_required
 def edit_event(request):
-
+    """ Check if the user is a superuser or not """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('events'))
 
-    """ Add a product to the store """
+    """ Edit an event """
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+        form = EventForm(request.POST, request.FILES)
         if form.is_valid():
-            product=form.save()
+            event=form.save()
             messages.success(request, 'Successfully added event!')
             return redirect(reverse('event_detail', args=[event.id]))
         else:
@@ -76,8 +76,21 @@ def edit_event(request):
     else:
         form = ProductForm()
 
-    template = 'products/add_product.html'
+    template = 'events/edit_event.html'
     context = {
+        'event': event,
         'form': form,
     }
     return render(request, template, context)
+
+@login_required
+def delete_event(request, event_id):
+    """ Check if the user is a superuser or not """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('events'))
+    """ Delete an event """
+    event = get_object_or_404(Event, pk=event_id)
+    event.delete()
+    messages.success(request, 'Event deleted!')
+    return redirect(reverse('events'))
