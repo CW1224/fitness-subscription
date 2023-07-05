@@ -1,9 +1,14 @@
 from django import forms
 from .models import Event
+from .widgets import CustomClearableFileInput
 
 class EventForm(forms.ModelForm):
 
     class Meta:
         model = Event
-        fields = ('event_title', 'content', 'event_on', 'street_address1', 'street_address2',
-        'town_or_city', 'county', 'postcode')
+        fields = '__all__'
+        widgets = {
+            'event_on': forms.DateTimeInput(format=('%Y-%m-%dT%H:%M'), attrs={'type': 'datetime-local'})
+        }
+
+        image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)

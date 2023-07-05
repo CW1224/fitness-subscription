@@ -12,9 +12,11 @@ class Event(models.Model):
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     county = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
-        return f'{self.product} review by {self.author}'
+        return f'{self.event_title} added on {self.created_on}'

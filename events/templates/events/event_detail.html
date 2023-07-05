@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="container header-container  d-lg-none">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block mobile_nav %}
+<nav class="navbar navbar-expand-lg navbar-light w-100 px-auto">
+    {% include 'includes/mobile-top-header.html' %}
+</nav>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid w-100">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Events</h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container my-5 bg-white">
+                    {% if event.image %}
+                        <a href="{{ event.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ event.image.url }}" alt="{{ event.event_title }}">
+                        </a>
+                        
+                        {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ event.event_title }}">
+                        </a>
+                        
+                    {% endif %}
+                </div>
+            </div>
+
+{% endblock %}
