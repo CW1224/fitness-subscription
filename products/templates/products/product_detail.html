@@ -114,8 +114,8 @@
                                 </div>
                             </div>
                             <!-- Add/remove from favorites link -->
-                            <a class="favorite-link link-blue" href="{% url 'add_favorite' product.id %}">
-                                {% if favorite %}
+                            <a class="" href="{% url 'add_favorite' product.id %}">
+                                {% if product.user_favorite.exists %}
                                     <i class="fas fa-heart" aria-label="Remove from favorites"></i>
                                 {% else %}
                                     <i class="far fa-heart" aria-label="Add to favorites"></i>

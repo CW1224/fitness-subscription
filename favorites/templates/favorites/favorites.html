@@ -21,7 +21,10 @@
 {% endblock %}
 
 {% block content %}
+        <h1>Hi</h1>
 
-        <p> {{ favorite.product.name }} </p>
+        {% for product in favorites %}
+            <p>{{ product.name }}</p>
+        {% endfor %}
 
 {% endblock %}

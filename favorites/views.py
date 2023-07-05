@@ -7,16 +7,17 @@ from products.models import Product
 @login_required
 def show_favorite(request):
     """ A view to show the user's favorite products"""
-    favorite = Product.objects.filter(user_favorite=request.user)
+    favorites = Product.objects.filter(user_favorite=request.user)
 
     context = {
-        'favorite': favorite,
+        'favorites': favorites,
     }
 
     return render(request, 'favorites/favorites.html', context)
 
 @login_required
 def add_or_remove_favorite(request, product_id):
+
     """ Add product to the user's favorites """
     product = get_object_or_404(Product, id=product_id)
 
