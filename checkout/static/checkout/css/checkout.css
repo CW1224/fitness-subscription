@@ -64,3 +64,8 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+/* Small screens sizes and down */
+@media (max-width: 768px) {
+    
+}

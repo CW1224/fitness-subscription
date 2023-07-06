@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static '/bag/css/bag.css' %}">
+{% endblock %}
+
 {% load bag_tools %}
 
 {% block page_header %}
@@ -62,7 +67,7 @@
                                                         <button class="decrement-qty btn btn-sm btn-black rounded-0" 
                                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                             <span>
-                                                                <i class="fas fa-minus fa-sm"></i>
+                                                                <i class="fas fa-minus fa-sm icon-small"></i>
                                                             </span>
                                                         </button>
                                                     </div>
@@ -74,7 +79,7 @@
                                                         <button class="increment-qty btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                             <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
+                                                                <i class="fas fa-plus fa-sm icon-small"></i>
                                                             </span>
                                                         </button>
                                                     </div>

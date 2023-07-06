@@ -1,0 +1,9 @@
+/* Medias queries */
+
+/* Small screens sizes and down */
+@media (max-width: 768px) {
+
+    .icon-small {
+        font-size: 0.5rem;
+    }
+}
