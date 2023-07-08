@@ -2,6 +2,10 @@ body {
     background: url("/media/background-image.jpg")no-repeat center center fixed;
 }
 
+.bg-normal {
+    background-color: rgb(202, 255, 152);
+}
+
 /* Index Page*/
 
 .shop-now-button {

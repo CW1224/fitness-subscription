@@ -5,8 +5,7 @@ from .models import Event
 
 class EventAdmin(admin.ModelAdmin):
     list_display = (
-        'event_title', 'content', 'event_on', 'street_address1', 'street_address2',
-        'town_or_city', 'county', 'postcode'
+        'event_title', 'content', 'event_on', 'location'
     )
 
     ordering = ('-created_on',)

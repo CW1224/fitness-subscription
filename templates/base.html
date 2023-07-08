@@ -35,7 +35,7 @@
 
     <title>Fitness Madness {% block extra_title %}{% endblock %}</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid fixed-top p-0 m-0">
       {% include 'includes/page-nav.html' %}
       <div id="topnav" class="pt-lg-2 d-none d-lg-flex bg-white">
@@ -78,7 +78,8 @@
               <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                   {% if request.user.is_superuser %}
-                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                  <a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a>
+                  <a href="{% url 'add_event' %}" class="dropdown-item">Add an event</a>
                   {% endif %}
                   <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                   <a href="{% url 'reviews' %}" class="dropdown-item">My Reviews</a>
@@ -145,7 +146,7 @@
     </script>
     {% endblock %}
     <!-- Footer -->
-    <footer class="footer container-fluid text-white mt-auto bg-black px-0">
+    <footer class="footer container-fluid text-white p-5 bg-black mt-auto">
       <div class="row w-100 px-2">
         <div class="col-md-4 px-2 py-4 px-md-4">
           <h4 class="mb-3">Madness Fitness</h4>

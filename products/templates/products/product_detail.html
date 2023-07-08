@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block mobile_nav %}
-<nav class="navbar navbar-expand-lg navbar-light w-100 px-auto">
+<nav class="navbar navbar-expand-lg navbar-light w-100 px-auto bg-white">
     {% include 'includes/mobile-top-header.html' %}
 </nav>
 {% endblock %}
@@ -37,24 +37,22 @@
             </nav>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5 bg-white">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 pt-2 text-center">
+                <div class="image-container my-5 bg-white mx-4">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        
+                        </a>  
                         {% else %}
                         <a href="">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
-                        
                     {% endif %}
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
+                    <h2 class="mb-2">{{ product.name }}</h2>
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
@@ -82,7 +80,7 @@
                             {% if s %}
                             <div class="col-12">
                                 <p><strong>Size:</strong></p>
-                                <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                                <select class="form-control rounded-0 w-50 mb-3" name="product_size" id='id_product_size'>
                                     <option value="xs">XS</option>
                                     <option value="s">S</option>
                                     <option value="m" selected>M</option>
@@ -90,15 +88,18 @@
                                     <option value="xl">XL</option>
                                 </select>
                             </div>
-                            {% endif %}    
+                            {% endif %}
                             <!-- Add/remove from favorites link -->
-                            <a class="large" href="{% url 'add_favorite' product.id %}">
+                            <a class="px-2" href="{% url 'add_favorite' product.id %}">
                                 {% if product.user_favorite.exists %}
-                                    <i class="fas fa-heart" aria-label="Remove from favorites"></i>
+                                    <i class="fas fa-heart font-icon " aria-label="Remove from favorites"></i>
                                 {% else %}
-                                    <i class="far fa-heart" aria-label="Add to favorites"></i>
+                                    <i class="far fa-heart font-icon" aria-label="Add to favorites"></i>
                                 {% endif %}
                             </a>
+                            {% if product.user_favorite.exists %}
+                            <p class="text-red">Favorite</p>
+                            {% endif %}
                             <!-- Allows user to choose quantity to add to bag -->
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
@@ -143,40 +144,38 @@
                 </div>
             </div>
             <!-- Product reviews -->
-            <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1">
-                    <hr class="my-0">
-                        <a class="logo-text link-dark my-0" data-bs-toggle="collapse" href="#collapse-reviews" 
-                            role="button" aria-expanded="false" aria-controls="collapse-reviews">            
-                            <p class="py-3 my-0">Reviews ({{ product_reviews | length }})</p>
-                        </a>
-                        <hr class="my-0">
-                    {% if product_reviews %}
-                        <div class="review-container mt-4">
-                            {% for review in product_reviews %}
-                                <div class="my-4 border-bottom">
-                                    <h5>{{ review.title }}</h5>
-                                    <p>{{ review.content }}</p>
-                                    <p class="c--light-blue"><i class="fas fa-star me-1"></i>{{ review.rating }} / 5</p>
-                                    <p class="text-muted d-inline small">By {{ review.author }} on {{ review.created_on }}</p>
-                                    {% if review.author == request.user %}
-                                        <a href="{% url 'edit_review' review.id %}" class="btn btn-main">
-                                        <span class="text-uppercase">Edit Review</span>
-                                        <a href="{% url 'delete_review' review.id %}" class="btn btn-main">
-                                        <span class="text-uppercase">Delete Review</span>
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <div class="my-4">
-                            No reviews for this product yet.
-                        </div>
-                    {% endif %}
-                    <a href="{% url 'add_review' product.id %}" class="btn btn-main hvr-back-pulse">
-                        <span class="text-uppercase">Leave a Review</span>
+            <div class="col-12 col-lg-6">
+                <hr class="my-0">
+                    <a class="logo-text link-dark my-0" data-bs-toggle="collapse" href="#collapse-reviews" 
+                        role="button" aria-expanded="false" aria-controls="collapse-reviews">            
+                        <p class="py-3 my-0">Reviews ({{ product_reviews | length }})</p>
                     </a>
+                    <hr class="my-0">
+                {% if product_reviews %}
+                    <div class="review-container mt-4">
+                        {% for review in product_reviews %}
+                            <div class="my-4 border-bottom">
+                                <h5>{{ review.title }}</h5>
+                                <p>{{ review.content }}</p>
+                                <p class="c--light-blue"><i class="fas fa-star me-1"></i>{{ review.rating }} / 5</p>
+                                <p class="text-muted d-inline small">By {{ review.author }} on {{ review.created_on }}</p>
+                                {% if review.author == request.user %}
+                                    <a href="{% url 'edit_review' review.id %}" class="btn btn-main">
+                                    <span class="text-uppercase">Edit Review</span>
+                                    <a href="{% url 'delete_review' review.id %}" class="btn btn-main">
+                                    <span class="text-uppercase">Delete Review</span>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
                     </div>
+                {% else %}
+                    <div class="my-4">
+                        No reviews for this product yet.
+                    </div>
+                {% endif %}
+                <a href="{% url 'add_review' product.id %}" class="btn btn-main hvr-back-pulse">
+                    <span class="text-uppercase">Leave a Review</span>
+                </a>
                 </div>
             </div>
         </div>

@@ -16,31 +16,28 @@
 {% block content %}
 <div class="container p-3">
     <div class="pb-4 mx-4">
-        <h1 class="text-white">Events for Charities</h1>
-        <h4></h4>
+        <h1 class="text-center">Events</h1>
+        <hr class="w-75 mb-1">
     </div>
-    <div>
-        {% if request.user.is_superuser %}
-            <a href="{% url 'add_event' %}" class="btn btn-main hvr-back-pulse">
-                <span class="text-uppercase">Add an event</span>
-            </a>
-        {% endif %}
-    </div>
-    <div class="bg-white p-4 m-4">
-        {% for event in events %}
-            {% if product.image %}
-            <a href="{% url 'event_detail' event.id %}">
-                <img class="card-img img-fluid h-100" src="{{ event.image.url }}" alt="{{ event.event_title }}">
-            </a>
-            {% else %}
-            <a href="{% url 'event_detail' event.id %}">
-                <img class="card-img-top img-fluid h-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ event.event_title }}">
-            </a>
-            {% endif %}
-            <div class="card-body pb-1 bg-white">
-                <p class="mb-0">{{ event.event_title }}</p>
+    {% for event in events %}
+        <div class="row bg-white my-4">
+            <div class="col-lg-3 m-3 h-100">
+                {% if event.image %}
+                    <a href="{% url 'event_detail' event.id %}">
+                        <img class="img-fluid w-100" src="{{ event.image.url }}" alt="{{ event.event_title }}">
+                    </a>
+                {% else %}
+                    <a href="{% url 'event_detail' event.id %}">
+                        <img class="img-fluid w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ event.event_title }}">
+                    </a>
+                {% endif %}
             </div>
-        {% endfor %}
-    </div>
+            <div class="p-4 col-lg-8 font small-font">
+                <p><strong>{{ event.event_title }}</strong></p>
+                <p><strong>Event location:</strong>  {{ event.location }}</p>
+                <p><strong>Event happening:</strong> {{ event.event_on }}</p>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

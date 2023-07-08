@@ -58,23 +58,24 @@ def add_event(request):
     return render(request, template, context)
 
 @login_required
-def edit_event(request):
+def edit_event(request, event_id):
     """ Check if the user is a superuser or not """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('events'))
 
     """ Edit an event """
+    event = get_object_or_404(Event, pk=event_id)
     if request.method == 'POST':
-        form = EventForm(request.POST, request.FILES)
+        form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
-            event=form.save()
+            form.save()
             messages.success(request, 'Successfully added event!')
             return redirect(reverse('event_detail', args=[event.id]))
         else:
             messages.error(request, 'Failed to add event. Please ensure the form is valid.')
     else:
-        form = ProductForm()
+        form = EventForm(instance=event)
 
     template = 'events/edit_event.html'
     context = {

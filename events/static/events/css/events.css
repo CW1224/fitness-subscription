@@ -1,3 +1,20 @@
-body {
-    background: url("/media/background-image.jpg")no-repeat center center fixed;
+.font {
+    font-size: x-large;
+}
+
+.icon-large {
+    font-size: 2rem;
+}
+
+/* Medias queries */
+
+/* Small screens sizes and down */
+@media (max-width: 768px) {
+    .small-font {
+        font-size: large;
+    }
+
+    .font-small {
+        font-size: 1rem;
+    }
 }
