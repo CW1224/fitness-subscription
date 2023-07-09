@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blogs/css/blogs.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container p-3">
+    <div class="pb-4 mx-4">
+        <h1 class="text-center">Blogs</h1>
+        <hr class="w-75 mb-1">
+    </div>
+    {% for blog in blogs %}
+        <div class="row bg-white my-4">
+            <div class="col-lg-3 m-3 h-100">
+                {% if event.image %}
+                    <img class="img-fluid w-100" src="{{ event.image.url }}" alt="{{ event.event_title }}">
+                {% endif %}
+            </div>
+            <div class="p-4 col-lg-8 font small-font">
+                <p><strong>{{ blog.title }}</strong></p>
+                <p><strong>{{ blog.content }}</strong></p>
+                <p><strong>{{ blog.blog_author }}</strong></p>
+                <a href="{% url 'edit_blog' blog.id %}" class="btn-small">
+                    <span class="text-uppercase text-white px-2">Edit Blog</span>
+                </a>
+            </div>
+
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
