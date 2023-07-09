@@ -16,6 +16,18 @@ def show_blogs(request):
 
     return render(request, template, context)
 
+def show_my_blogs(request):
+    """ A view to show the user's product reviews """
+    blogs = Blog.objects.filter(blog_author=request.user)
+
+    template = 'blogs/my_blogs.html'
+
+    context = {
+        'blogs': blogs,
+    }
+
+    return render(request, template, context)
+
 @login_required
 def add_blog(request):
 
@@ -72,3 +84,19 @@ def edit_blog(request, blog_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def delete_blog(request, blog_id):
+
+    blog = get_object_or_404(Blog, pk=blog_id)
+
+    if request.user != review.author:
+        messages.error(request, 'Only the author of the blog can edit this')
+        return redirect(reverse('home'))
+
+    """ Delete blog of the user """
+
+    blog.delete()
+    messages.success(request, 'Blog deleted!')
+
+    return redirect(reverse('home'))
