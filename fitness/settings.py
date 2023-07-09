@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['fitness11.herokuapp.com','8000-cw1224-fitnesssubscript-j8idd0zlep5.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['*','8000-cw1224-fitnesssubscript-j8idd0zlep5.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -192,7 +192,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'fitness11'
     AWS_S3_REGION_NAME = 'eu-west-1'

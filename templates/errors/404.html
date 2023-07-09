@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
     <div class="container header-container">
@@ -7,10 +8,7 @@
     </div>
     <div class="container h-100">
         <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    The page you are looking for isn't available
-                </h1>
+                <h1>The page you are looking for isn't available</h1>
                 <div class="my-5">
                     <h4>
                         <a href="{% url 'products' %}" 
