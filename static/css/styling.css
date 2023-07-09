@@ -306,7 +306,7 @@ input[name='q']::placeholder {
     }
 
     /* Reduce font size in small screens */
-    .font-small {
+    .tiny-font {
         font-size: small;
     }
 
