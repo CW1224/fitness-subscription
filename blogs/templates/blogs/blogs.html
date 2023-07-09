@@ -19,18 +19,22 @@
         <h1 class="text-center">Blogs</h1>
         <hr class="w-75 mb-1">
     </div>
-    <a href="{% url 'add_blog' %}" class="btn btn-main hvr-back-pulse">
-        <span class="text-uppercase">Share your experience</span>
-    </a>
-    <div class="row my-4 justify-content-center">
+    <div class="text-center">
+        <a href="{% url 'add_blog' %}" class="btn btn-main hvr-back-pulse share bg-white border-black p-2">
+            <span class="text-uppercase large font-weight-bold">Share your experience</span>
+        </a>
+    </div>
+    <div class="row mb-4 justify-content-center">
         {% for blog in all_blogs %}
-            <div class="col-lg-3 pt-2 pb-5 my-4 px-auto mx-4 bg-white text-center">
-                <h3 class="py-1"><strong>{{ blog.title }}</strong></h3>
+            <div class="col-lg-3 pt-2 pb-5 my-4 px-auto mx-4 bg-white text-center border-black">
                 {% if blog.image %}
+                    <h3 class="py-1"><strong>{{ blog.title }}</strong></h3>
                     <img class="img-fluid w-100 h-50 my-2" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                {% else %}
+                    <h3 class="pt-5 pb-3"><strong>{{ blog.title }}</strong></h3>
                 {% endif %}
-                <p class="pb-2">{{ blog.content }}</p>
-                <p class="small mt-1 mb-0">Written by {{ blog.blog_author }} on {{ blog.created_on }}</p>
+                <p class="py-2">{{ blog.content }}</p>
+                <p class="small mt-2 mb-0 font-italic">Written by {{ blog.blog_author }} on {{ blog.created_on }}</p>
             </div>
         {% endfor %}
     </div>

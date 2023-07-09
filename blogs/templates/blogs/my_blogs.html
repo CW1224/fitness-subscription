@@ -21,19 +21,23 @@
     </div>
     <div class="row my-4 justify-content-center">
         {% for blog in blogs %}
-            <div class="col-sm-6 col-md-6 col-lg-3 py-2 my-4 mx-4 bg-white text-center w-100">
-                <h3 class="py-2"><strong>{{ blog.title }}</strong></h3>
+            <div class="col-sm-6 col-md-6 col-lg-3 py-2 my-4 mx-4 bg-white text-center w-100 border-black">
                 {% if blog.image %}
+                    <h3 class="py-1"><strong>{{ blog.title }}</strong></h3>
                     <img class="img-fluid w-100 h-50 my-2" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                {% else %}
+                    <h3 class="pt-5 pb-3"><strong>{{ blog.title }}</strong></h3>
                 {% endif %}
-                <p class="pb-2">{{ blog.content }}</p>
-                <p class="small mt-1 mb-0">Written by {{ blog.blog_author }} on {{ blog.created_on }}</p>
-                <p>
-                <a href="{% url 'edit_blog' blog.id %}" class="btn btn-main">
-                <span class="text-uppercase small text-green">Edit Blog</span>
-                <a href="{% url 'delete_blog' blog.id %}" class="btn btn-main">
-                <span class="text-uppercase small text-red">Delete Blog</span>
-                </p>
+                <p class="py-2">{{ blog.content }}</p>
+                <p class="small mt-2 mb-0 font-italic">Written by {{ blog.blog_author }} on {{ blog.created_on }}</p>
+                <div class="pt-2">
+                    <a href="{% url 'edit_blog' blog.id %}" class="btn btn-main">
+                    <span class="text-uppercase small text-green">Edit Blog</span>
+                    </a>
+                    <a href="{% url 'delete_blog' blog.id %}" class="btn btn-main">
+                    <span class="text-uppercase small text-red">Delete Blog</span>
+                    </a>
+                </div>
             </div>
         {% endfor %}
     </div>

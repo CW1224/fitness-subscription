@@ -189,20 +189,6 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* Mailchimp CSS */
-
-#mc_embed_signup{
-    background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
-
-/*  Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -285,6 +271,14 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+/* Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 85%;
+    }
+  }
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -301,8 +295,8 @@ input[name='q']::placeholder {
     }
 }
 
-/* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
+    /* pad the top a bit when navbar is collapsed on mobile */
     .header-container {
         padding-top: 116px;
     }
@@ -311,9 +305,8 @@ input[name='q']::placeholder {
         height: calc(100vh - 116px);
     }
 
-    /* Reduce size of title on navigation link on smaller screens */
-
-    .small_nav_title {
+    /* Reduce font size in small screens */
+    .font-small {
         font-size: small;
     }
 

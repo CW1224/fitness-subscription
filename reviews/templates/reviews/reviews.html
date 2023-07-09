@@ -36,41 +36,41 @@
             {% for review in reviews %}
                 <div class="col-sm-6 col-md-6 col-lg-3 my-2 ">
                     <div class="card border-0 h-100">
-                            {% if review.product.image %}
-                            <img class="card-img img-fluid h-50" src="{{ review.product.image.url }}" alt="{{ review.product.name }}">
-                            {% else %}
-                            <img class="card-img-top img-fluid h-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ review.product.name }}">
+                        {% if review.product.image %}
+                        <img class="card-img img-fluid h-50" src="{{ review.product.image.url }}" alt="{{ review.product.name }}">
+                        {% else %}
+                        <img class="card-img-top img-fluid h-50" src="{{ MEDIA_URL }}noimage.png" alt="{{ review.product.name }}">
+                        {% endif %}
+                        <div class="card-body pb-1 bg-white">
+                            <p class="mb-0">{{ review.product.name }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <p class="lead mb-0 text-left font-weight-bold">${{ review.product.price }}</p>
+                            {% if review.product.category %}
+                            <p class="small mt-1 mb-0">
+                                <i class="fas fa-tag mr-1"></i>{{ review.product.category.friendly_name }}
+                            </p>
                             {% endif %}
-                            <div class="card-body pb-1 bg-white">
-                                <p class="mb-0">{{ review.product.name }}</p>
-                            </div>
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <p class="lead mb-0 text-left font-weight-bold">${{ review.product.price }}</p>
-                                {% if review.product.category %}
-                                <p class="small mt-1 mb-0">
-                                    <i class="fas fa-tag mr-1"></i>{{ review.product.category.friendly_name }}
-                                </p>
-                                {% endif %}
-                                {% if review.product.rating %}
-                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ review.product.rating }} / 5</small>
-                                {% else %}
-                                    <small class="text-muted">No Rating</small>
-                                {% endif %}
-                            </div>
+                            {% if review.product.rating %}
+                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ review.product.rating }} / 5</small>
+                            {% else %}
+                                <small class="text-muted">No Rating</small>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3 my-2 text-white bg-black">
                     <h3 class="py-2 text-center">{{ review.title }}</h3>
-                    <p class="h-50">Content: {{ review.content }}</p>
+                    <p>Content: {{ review.content }}</p>
                     <p>Rating: <i class="fas fa-star mr-1"></i>{{ review.rating }} / 5</p>
                     <div class="small pb-2">
                         <a href="{% url 'edit_review' review.id %}" class="btn-small">
-                        <span class="text-uppercase text-white px-2">Edit Review</span>
+                        <span class="text-uppercase px-2 text-green">Edit Review</span>
                         <a href="{% url 'delete_review' review.id %}" class="btn-small">
-                        <span class="text-uppercase text-white px-2">Delete Review</span>
+                        <span class="text-uppercase px-2 text-red">Delete Review</span>
                         </a>
                     </div>
-                    <p>Created on: {{ review.created_on }}</p>
+                    <p class="small font-italic">Created on: {{ review.created_on }}</p>
                 </div>
             {% endfor %}
         </div>

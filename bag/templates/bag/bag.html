@@ -34,8 +34,8 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
+                                    <th scope="d-none d-lg-block"></th>
+                                    <th class="d-none d-lg-block" scope="col">Price</th>
                                     <th scope="col">Qty</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
@@ -43,14 +43,15 @@
 
                             {% for item in bag_items %}
                                 <tr>
-                                    <td class="p-3 w-25">
+                                    <td class="p-lg-3 w-25">
                                         {% if item.product.image %}
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                         {% else %}
                                         <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                         {% endif %}
+                                        
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-lg-3 d-none d-lg-block">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                         <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
@@ -58,41 +59,45 @@
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
-                                    <td class="py-3 w-25">
+                                    <td class="py-lg-3 w-30">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-minus fa-sm icon-small"></i>
-                                                            </span>
-                                                        </button>
+                                                    <div class="input-group input-group-{{ item.item_id }}">
+                                                        <div class="input-group-prepend">
+                                                            <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.item_id }} 
+                                                                {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
+                                                                data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                                <span>
+                                                                    <i class="fas fa-minus fa-sm"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                        <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }} 
+                                                            {% if item.size %}size_{{ item.item_id }}_{{ item.size }}{% endif %}" type="number"
+                                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                            data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                        <div class="input-group-append">
+                                                            <button class="increment-qty btn btn-sm btn-black rounded-0 increment-qty_{{ item.item_id }} 
+                                                                {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
+                                                                data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
+                                                                <span>
+                                                                    <i class="fas fa-plus fa-sm icon-small"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                        {% if item.product.has_sizes %}
+                                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                                        {% endif %}
                                                     </div>
-                                                    <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}"
-                                                        id="id_qty_{{ item.item_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm icon-small"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    {% if item.product.has_sizes %}
-                                                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </form>    
-                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="update-link text-info" type="submit"><small>Update</small></a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-lg-3">
                                         <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>

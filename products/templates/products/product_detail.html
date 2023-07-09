@@ -144,46 +144,47 @@
                 </div>
             </div>
             <!-- Product reviews -->
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 justify-content-center">
                 <hr class="my-0">
-                    <a class="logo-text link-dark my-0" data-bs-toggle="collapse" href="#collapse-reviews" 
-                        role="button" aria-expanded="false" aria-controls="collapse-reviews">            
-                        <p class="py-3 my-0">Reviews ({{ product_reviews | length }})</p>
-                    </a>
-                    <hr class="my-0">
-                {% if product_reviews %}
-                    <div class="review-container mt-4">
-                        {% for review in product_reviews %}
-                            <div class="my-4 border-bottom">
-                                <h5>{{ review.title }}</h5>
-                                <p>{{ review.content }}</p>
-                                <p class="c--light-blue"><i class="fas fa-star me-1"></i>{{ review.rating }} / 5</p>
-                                <p class="text-muted d-inline small">By {{ review.author }} on {{ review.created_on }}</p>
-                                {% if review.author == request.user %}
-                                    <a href="{% url 'edit_review' review.id %}" class="btn btn-main">
-                                    <span class="text-uppercase">Edit Review</span>
-                                    <a href="{% url 'delete_review' review.id %}" class="btn btn-main">
-                                    <span class="text-uppercase">Delete Review</span>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    <div class="my-4">
-                        No reviews for this product yet.
-                    </div>
-                {% endif %}
-                <a href="{% url 'add_review' product.id %}" class="btn btn-main hvr-back-pulse">
-                    <span class="text-uppercase">Leave a Review</span>
+                <h5 class="py-3 my-0">Reviews ({{ product_reviews | length }})</h5>
+                <a href="{% url 'add_review' product.id %}" class="btn btn-main hvr-back-pulse mb-3">
+                    <span class="text-uppercase bg-white p-2 border-black my-3 mx-auto">Leave a Review</span>
                 </a>
+                    {% if product_reviews %}
+                        <div class="review-container mb-3 bg-white p-3">
+                            {% for review in product_reviews %}
+                                <div class="my-4 border-bottom">
+                                    <h5>{{ review.title }}</h5>
+                                    <p class="font-italic small">Content:</p>
+                                    <p>{{ review.content }}</p>
+                                    <p><i class="fas fa-star text-green"></i> {{ review.rating }} / 5</p>
+                                    <p class="text-muted d-inline small">By {{ review.author }} on {{ review.created_on }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="my-4 bg-white">
+                            No reviews for this product yet.
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
+    </div>
+    <div class="return-top btt-button shadow-sm rounded-0 border bg-white border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
     </div>
 
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
