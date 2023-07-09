@@ -12,7 +12,7 @@ def about(request):
 
     return render(request, 'home/about.html')
 
-def contact(request):
+def policy(request):
     """ A view to return to index page"""
 
-    return render(request, 'home/contact.html')
+    return render(request, 'home/policy.html')
