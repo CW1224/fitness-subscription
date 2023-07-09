@@ -15,12 +15,7 @@
 
 {% block page_header %}
     <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-    <div class="container header-container">
-        <div class="row">
+        <div class="row py-4">
             <div class="col"></div>
         </div>
     </div>
@@ -59,15 +54,25 @@
                     </h4>
                 </div>
             </div>
-        </div>
-        <div class="col-md-8 col-lg-8 p-4 mb-5 bg-white offset-md-4 text-center border border-secondary">
-            <h2 class="text-black">
-                Exercise for Charity
-            </h2>
-            <div class="'my-5 p-4">
-                <h4>
-                    <a href=" {% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Learn more</a>
-                </h4>
+            <div class="col-md-8 col-lg-8 p-4 mb-5 bg-white offset-md-4 text-center border border-secondary">
+                <h2 class="text-black">
+                    Exercise for Charity
+                </h2>
+                <div class="'my-5 p-4">
+                    <h4>
+                        <a href=" {% url 'events' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Learn more</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-8 p-4 mb-5 bg-white text-center border border-secondary">
+                <h2 class="text-black">
+                    See what others are saying
+                </h2>
+                <div class="'my-5 p-4">
+                    <h4>
+                        <a href=" {% url 'blog' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">See more</a>
+                    </h4>
+                </div>
             </div>
         </div>
     </div>

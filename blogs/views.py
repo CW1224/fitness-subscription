@@ -6,12 +6,12 @@ from .forms import BlogForm
 
 def show_blogs(request):
     """ A view to show the user's product reviews """
-    blogs = Blog.objects.all()
+    all_blogs = Blog.objects.all()
 
     template = 'blogs/blogs.html'
 
     context = {
-        'blogs': blogs,
+        'all_blogs': all_blogs,
     }
 
     return render(request, template, context)
@@ -90,13 +90,13 @@ def delete_blog(request, blog_id):
 
     blog = get_object_or_404(Blog, pk=blog_id)
 
-    if request.user != review.author:
+    if request.user != blog.blog_author:
         messages.error(request, 'Only the author of the blog can edit this')
-        return redirect(reverse('home'))
+        return redirect(reverse('blog'))
 
     """ Delete blog of the user """
 
     blog.delete()
     messages.success(request, 'Blog deleted!')
 
-    return redirect(reverse('home'))
+    return redirect(reverse('my_blog'))

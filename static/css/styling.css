@@ -16,6 +16,10 @@ body {
     color: red;
 }
 
+.text-green {
+    color: rgb(43, 255, 0);
+}
+
 /* Font size adjustments */
 
 .small {

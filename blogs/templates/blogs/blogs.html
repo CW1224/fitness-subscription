@@ -19,29 +19,34 @@
         <h1 class="text-center">Blogs</h1>
         <hr class="w-75 mb-1">
     </div>
-    {% for blog in blogs %}
-        <div class="row bg-white my-4">
-            <div class="col-lg-3 m-3 h-100">
-                {% if blog.image %}
-                    <img class="img-fluid w-100" src="{{ blog.image.url }}" alt="{{ blog.title }}">
-                {% endif %}
-            </div>
-            <div class="p-4 col-lg-8 font small-font">
-                <p><strong>{{ blog.title }}</strong></p>
-                <p><strong>{{ blog.content }}</strong></p>
-                <p><strong>{{ blog.blog_author }}</strong></p>
-                {% if review.author == request.user %}
-                    <a href="{% url 'edit_blog' blog.id %}" class="btn btn-main">
-                    <span class="text-uppercase">Edit Blog</span>
-                    <a href="{% url 'delete_blog' blog.id %}" class="btn btn-main">
-                    <span class="text-uppercase">Delete Blog</span>
-                {% endif %}
-            </div>
-
-        </div>
-    {% endfor %}
     <a href="{% url 'add_blog' %}" class="btn btn-main hvr-back-pulse">
         <span class="text-uppercase">Share your experience</span>
     </a>
+    <div class="row my-4 justify-content-center">
+        {% for blog in all_blogs %}
+            <div class="col-lg-3 pt-2 pb-5 my-4 px-auto mx-4 bg-white text-center">
+                <h3 class="py-1"><strong>{{ blog.title }}</strong></h3>
+                {% if blog.image %}
+                    <img class="img-fluid w-100 h-50 my-2" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                {% endif %}
+                <p class="pb-2">{{ blog.content }}</p>
+                <p class="small mt-1 mb-0">Written by {{ blog.blog_author }} on {{ blog.created_on }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="return-top btt-button shadow-sm rounded-0 border border-white">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
 {% endblock %}
