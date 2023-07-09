@@ -30,6 +30,7 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     path('favorites/', include('favorites.urls')),
     path('events/', include('events.urls')),
+    path('blogs/', include('blogs.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'fitness.views.handler404'
