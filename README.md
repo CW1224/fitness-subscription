@@ -4,9 +4,11 @@ Welcome to the readme file of my project.
 
 ## Introduction
 
-This programme is designed 
+Fitness Madness is a fitness website that encourages the user to become more fit.
 
-You can find a link to my website [here]().
+The website offers the user the ability to buy gym passes that is valid in six gyms across Dublin city. (This is done solely for the project, Fitness Madness is not an actual gym in Ireland.) The website also offers the ability to record and share their progress with other users as well as buying sports products and meal plans as well as viewing other people's progresses and thoughts on products that the website offers.
+
+You can find a link to my website [here](https://fitness11.herokuapp.com/).
 
 # Table of Contents
 [1.User Experience(UX)](#1-user-experience)
@@ -14,7 +16,6 @@ You can find a link to my website [here]().
 - 1.2 User Expectations
 - 1.3 User Stories
 - 1.4 Wireframe
-- 1.5 Strategy Tables
 
 [2.Features](#2-features)
 
@@ -38,41 +39,121 @@ You can find a link to my website [here]().
 
 [Return to the Table of Contents](#table-of-contents)
 
+The user should be able to buy subscriptions for the gym as well as buying products that the website has to sell. The user can also choose to login or signup to access more functionalities. The user should be able to know what the website is used for without having to read deep into it. The user should also be able to view events and blogs without having to login.
+
 
 ## 1.2 User Expectations
 
-[Return to the Table of Contents](#table-of-contents)
+### User Goals
 
-The following are expected of the website:
+**Epic 1 - Shopping Experience**
 
-* Should be easily accessible.
-* The language should be in simple English.
-* The user should be able to login and out easily.
-* 
-* 
-* The user can sign up to the website if they haven't an account. 
-* 
-* The user should be able to access the website on different devices, not just through the computer.
+* As a shopper, I want to easily find the products and their details.
+
+* As a shopper, I want to view products on a specific category.
+
+* As a shopper, I want to be able to sort the products depending on their price, rating or category.
+
+* As a shopper, I want to be able to search for products using specific keywords.
+
+* As a shopper, I want to easily select the quantity of products to be purchased.
+
+* As a shopper, I want to easily view the current purchase amount.
+
+**Epic 2 - Shopping Bag and Checkout**
+
+* As a shopper, I want to view all items currently on my shopping bag and be able to update them.
+
+* As a shopper, I want to easily provide my shipping and payment information during the checkout.
+
+* As a shopper, I want to feel my personal and payment data is being handled securely.
+
+* As a shopper, I want to receive an order confirmation once I have finished my purchase.
+
+* As a shopper, I want to receive an order confirmation email for my records.
+
+**Epic 3 - User Accounts**
+
+* As a frequent shopper, I want to be able to register an account using my email address to be able to keep my records and interact with the website.
+
+* As a frequent shopper, I want to receive a confirmation once my account has been registered to make sure the information entered was correctly.
+
+* As a registered shopper, I want to easily log in and out from my account.
+
+* As a registered shopper, I want to be able to recover access to my account in case I forget my password.
+
+* As a registered shopper, I want to have a personalized profile page where I can keep my contact information updated and see my past orders.
+
+**Epic 4 - Product Reviews**
+
+* As a shopper, I want to be able to read product reviews left by other shoppers.
+
+* As a shopper, I want to view my all the reviews made by me.
+
+* As a registered shopper, I want to be able to leave product reviews and rate the products.
+
+* As a shopper, I want to be able to edit or delete my reviews.
+
+**Epic 5 - Favorites**
+
+* As a registered shopper, I want to be able to keep a list of my favorite products to purchase again in the future.
+
+* As a registered shopper, I want to be able to easily add and remove favorite products.
+
+**Epic 6 - Blogs**
+
+* As a registered shopper, I want to be able to view the blogs of fellow shoppers or users of the site.
+
+* As a registered shopper, I want to be able to upload any my progresses.
+
+* As a registered shopper, I want to be able to edit, delete and view all my blogs.
+
+**Epic 7 - Product Admin**
+
+* As a site admin, I want to be able to add and update products.
+
+* As a site admin, I want to be able to remove product no longer available.
+
+* As a site admin, I want to be able to add events that are coming up and remove old expired ones.
+
+**Epic 8 - Newsletter Subscription**
+
+* As a site admin, I want shoppers to be able to provide their contact information to be able to reach out to them with information and offers.
 
 ## 1.3 User Stories
 
 [Return to the Table of Contents](#table-of-contents)
 
 Throughout the project, I used github user stories to record and keep track of my tasks. At the beginning, I listed all the things I needed to do, moved them to the second column when I am working on them and finally to the last column when I am done with that task.
-![user_story_board](documents/images/user_stories.png)
+![user_story_board](assets/image/user-stories.png)
 
 ## 1.4 Wireframes
 
 [Return to the Table of Contents](#table-of-contents)
 
-### Mobile Wireframe
-
 This was what I had in mind when I was coming up with the skeleton of the project.
-![user_story_board](documents/images/webframe-mobile.png)
 
-### Website Wireframe
+This is what the index page should look like:
+![user_story_board](assets/wireframe/template-index-page.png)
 
-![user_story_board](documents/images/webframe-website.png)
+This is what the about page should look like:
+![user_story_board](assets/wireframe/template-about-page.png)
+
+This is what the product page should look like:
+![user_story_board](assets/wireframe/template-product-page.png)
+
+This is what the product-detail page should look like:
+![user_story_board](assets/wireframe/template-product-page.png)
+
+This is what the event page should look like:
+![user_story_board](assets/wireframe/template-event-page.png)
+
+This is what the blog page should look like:
+![user_story_board](assets/wireframe/template-blog-page.png)
+
+This is what the checkout page should look like:
+![user_story_board](assets/wireframe/template-checkout-page.png)
+
 
 ## 1.5 Strategy Table
 
@@ -167,67 +248,6 @@ The contents of the testing section can be find [here](testing.md).
 # 6. Deployment
 
 [Return to the Table of Contents](#table-of-contents)
-
-The site was deployed to Heroku using the following steps:
-
-- Install Django and the supporting libraries
-    - Install Django and Gunicorn. Gunicorn is the server that is used to run Django on Heroku.
-    - Install support libraries including psycopg2, this was used to connect the PostgreSQL database.
-    - Install Cloudinary libraries, this is a host provider service that stores images.
-    - The requirements.txt file was created to include the project's dependencies which allowed us to run the project in Heroku.
-
-- Create a new, blank Django Project
-    - Create a new project
-    - Create the app
-    - Add reservations to the installed apps in settings.py
-    - Migrate all new changes to the database
-    - Run the server to test
-
-- Setup project to use Cloudinary and PostgreSQL
-    - Create new Heroku app
-        - Sign into Heroku
-        - Select New
-        - Select create new app
-        - Enter a relevant app name
-        - Select appropriate region
-        - Select the create app button
-
-    - Attach PostgreSQL database
-        - In Heroku go to resources
-        - Search for Postgres in the add-ons box
-        - Select Heroku Postgres
-        - Submit order form
-
-    - Prepare the environment and settings.py file
-        - Create env.py file
-        - Add DATABASE_URL with the Postgres URL from Heroku
-        - Add SECRET_KEY with a randomly generated key
-        - Add SECRET_KEY and generated key to the config vars in Heroku
-        - Add if statement to settings.py to prevent the production server from erroring
-        - Replace insecure key with the environment variable for the SECRET_KEY
-        - Add Heroku database as the back end
-        - Migrate changes to new database
-
-    - Get static media files stored on Cloudinary
-        - Create a Cloudinary account
-        - From the dashboard, copy the API Environment variable
-        - In the settings.py file create a new environment variable for CLOUDINARY_URL
-        - Add the CLOUDINARY_URL variable to Heroku
-        - Add a temporary config var for DISABLE_COLLECTSTATIC
-        - In settings.py add Cloudinary as an installed app
-        - Add static and media file variables
-        - Add templates directory
-        - Change DIR's key to point to TEMPALTES_DIR
-        - Add Heroku hostname to allowed hosts
-        - Create directories for media, static and templates in the project workspace
-        - Create a Procfile
-
-- Deploy new empty project to Heroku
-
-- Set debug = False in the settings.py file of the repository
-- Commit and push all files to GitHub.
-- In Heroku, remove the DISABLE_COLLECTSTATIC config var.
-- In the deploy tab, go to the manual deploy sections and click deploy branch.
 
 # 7. Project Completion
 
