@@ -92,7 +92,7 @@
                             {% if request.user.is_authenticated %}
                                 <!-- Add/remove from favorites link -->
                                 <a class="px-2" href="{% url 'add_favorite' product.id %}">
-                                    {% if user_favorite.exists %}
+                                    {% if product.user_favorite.exists %}
                                         <i class="fas fa-heart font-icon " aria-label="Remove from favorites"></i>
                                     {% else %}
                                         <i class="far fa-heart font-icon" aria-label="Add to favorites"></i>

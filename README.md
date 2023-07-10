@@ -104,7 +104,7 @@ The user should be able to buy subscriptions for the gym as well as buying produ
 
 * As a registered shopper, I want to be able to view the blogs of fellow shoppers or users of the site.
 
-* As a registered shopper, I want to be able to upload any my progresses.
+* As a registered shopper, I want to be able to upload my progresses.
 
 * As a registered shopper, I want to be able to edit, delete and view all my blogs.
 
@@ -226,24 +226,23 @@ According to the strategy table, not all features can be implemented in the firs
 
 ## Marketing
 
-
 ### Search Engine Optimisation
 
 Search Engine Optimisation
 
 To improve the search index rating on Google, research was carried out using a number of tools, such as [Wordtracker](https://www.wordtracker.com/) to search for relevant keywords to use in meta tags in the project head element.
 
-Search terms such as plastic free products and eco friendly were used to return popular keywords. A number of short and long tail keywords were then selected and inputted into the head element of base.html.
-
 The selected keywords are:
 
-* eco friendly products
-* sustainability products
-* environmentally friendly
-* non plastic materials
-* reusable products
-* non plastic products
-* plastic-free products
+* health 
+* healthy
+* wellbeing
+* fit
+* gym
+* outdoors
+* exercise
+* sport
+* nutrition
 
 These keywords remain a work in progress however. As is normal practise, in production these keywords would be monitored via, for example, Google Analytics, to determine which terms are driving traffic to the site. 
 
@@ -255,54 +254,53 @@ These terms could then be added to, or removed as deemed necessary, and with con
 
 #### Company description
 
-NoPlast is a B2C company that offer our customers plastic- free alternatives to plastic products in order to help us in our mission, to reduce the plastic consumption. Additionally, we provide information to create consciousness about plastic pollution and help our customers to take active choices in order to reduce their plastic waste.
+NoPlast is a B2C company that offer our customers the ability to buy sportswear online as well as signing up to be a member of a gym. Information is also provided to the customer on how to improve their mental wellbeing and having blogs greatly enhances this process.
 
 
 #### Customers
 
-Our thought costumers are millennials and younger, singles and families who have an environmental interest and a will to reduce their plastic consumption.
+Our target audience is more likely to be between the ages of 15 and 35. Since they have less time on their hand and would have a greater chance of spending time exercising in a gym.
 
 #### Competitors
 
 We see that we have three types of competitors. 
-There are companies that have the same interest and vision as NoPlast. But they are mainly focusing on a smaller range of products, such as baby products, hygiene and makeup, or kitchen products, while we have a wider range of products (Lilla Lammet, Less Plastic, Ecco-Verde, etc.).
-The other type of competitors that are bigger and have all kinds of products, but they supply both environmental and plastic products and it is therefore not as easy to get a good overview and get inspired of new plastic free products, and environmental tips at the same place. (Åhlens, IKEA etc.).
-There are some companies that offer the same kind of range as we do (Be Plast Free and Rekoshoppen). But they are not on the informative aspect to solve the plastic waste problem.
+There are companies that have the same interest and vision Fitness Madness but the majority of them are mainly focused on the membership part and don't have an online retail service.
+The other type of competitors would be commercial brands like Adidas, Nike, Under Armor who provides a range of sportswear and equipment but they don't offer a gym membership.
+There are some companies that offer the same kind of customer service as we do. But not all of them will have the exact some functions as our website.
 
 #### SWOT analysis
 
 **Strengths**
 
-* Many environmentally friendly products gathered in the same home page.
-* Information for the customer that gives them a deeper insight regarding plastic pollution and how to make better choices. 
+* Having many services available to the customer.
+* Information for the customer that gives them a deeper insight as to how to improve their health and wellbeing.
 * True interest for our mission within the company.
 
 **Weaknesses**
 
-* New brand
+* Small company
 * Small marketing budget
 
 **Opportunities**
 
-* Not many companies that have gathered a wide range of products on the same page in Sweden.
-* Cooperation with bigger brands and organizations.
+* Increasing events and awareness
 
 **Threats**
 
 * Shipping problem with products produced in other countries due to covid and other unpredictable factors.
 * Shipping costs that is variable
 * Bigger companies that can change their product supply.
-* Smaller environmental friendly companies that can wider their supply from one type of products.
 * Other similar companies can get more PR and bigger market share. 
 
 **Marketing Strategy**
 
-Due to our small marketing budget, we have decided to start a Facebook Business page and interact with our customers and bigger organizations within the environmentally friendly branch through that marketing channel. For our buying customers we have made it easy to sign up for our newsletter, in order to make them even more loyal and facilitate for them to share tips and products with their friends and family. Now, in this stage of starting a new company we rely a lot on “word of mouth” and that cooperation’s with organizations and influencers to bring value to the company by attracting more visitors for our homepage and more buying customers.
+Due to our small marketing budget, we have decided to start a Facebook Business page and interact with our customers through the social platform. Increasing the number of events that is happening within the company will speed up the spreading of the news and generate more attention to the business. Having influencers on Instagram marketing the business would also help spread the word, this could be done in exchange for free gym membership. It's better to focus on what we have at the minute rather than increasing the product range will ensure the quality of our service and products. 
 
 **Facebook Business page**
 
-See the live Facebook Business page [here](https://www.facebook.com/NoPlast-107480112033116).
-![NoPlast Facebook Business page image](assets/readme/facebook-business-page.png)
+See the live Facebook Business page [here](https://www.facebook.com/profile.php?id=100094215226907).
+![Fitness Madness Facebook Business page image](assets/image/facebook-page-1.png)
+![Fitness Madness Facebook Business page image-1](assets/image/facebook-page-2.png)
 
 # 2. Features
 
