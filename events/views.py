@@ -6,6 +6,7 @@ from .forms import EventForm
 
 # Create your views here.
 
+
 def show_events(request):
     """ A view to show the user's product reviews """
 
@@ -20,6 +21,7 @@ def show_events(request):
 
     return render(request, template, context)
 
+
 def event_detail(request, event_id):
 
     event = get_object_or_404(Event, pk=event_id)
@@ -29,6 +31,7 @@ def event_detail(request, event_id):
     }
 
     return render(request, 'events/event_detail.html', context)
+
 
 @login_required
 def add_event(request):
@@ -42,7 +45,7 @@ def add_event(request):
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
-            event=form.save()
+            event = form.save()
             messages.success(request, 'Successfully added event!')
 
             return redirect(reverse('events'))
@@ -56,6 +59,7 @@ def add_event(request):
         'form': form,
     }
     return render(request, template, context)
+
 
 @login_required
 def edit_event(request, event_id):
@@ -83,6 +87,7 @@ def edit_event(request, event_id):
         'form': form,
     }
     return render(request, template, context)
+
 
 @login_required
 def delete_event(request, event_id):

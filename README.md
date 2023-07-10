@@ -423,11 +423,14 @@ This is what the user will see once the payment comes through.
 This is the checkout page.
 ![checkout_page](assets/image/checkout.png)
 
-## 2.9 Footer
+## 2.9 Footer and Custom 404 Page
 
 The footer contains the policy, the website's facebook page and an option to subscribe to the website so that the user can receive the latest news and offers.
 
 ![footer](assets/image/footer.png)
+
+Custom 404 Page
+![404](assets/image/404-page-desk.png)
 
 # 3. Technology
 

@@ -18,6 +18,7 @@ def show_reviews(request):
 
     return render(request, template, context)
 
+
 @login_required
 def add_review(request, product_id):
     """ Add a review to a product """
@@ -25,11 +26,10 @@ def add_review(request, product_id):
     user_review = Review.objects.filter(
         author=request.user, product=product)
 
-    #Check if the user has already submitted a review for the product
+    # Check if the user has already submitted a review for the product
 
     if user_review:
-        messages.error(request,
-                        'You have already submitted a review for this product')
+        messages.error(request, 'You have already submitted a review for this product')
         return redirect(reverse('product_detail', args=[product.id]))
     else:
 
@@ -55,6 +55,7 @@ def add_review(request, product_id):
         'form': form,
     }
     return render(request, template, context)
+
 
 @login_required
 def edit_review(request, review_id):
@@ -93,6 +94,7 @@ def edit_review(request, review_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_review(request, review_id):
 
@@ -108,6 +110,7 @@ def delete_review(request, review_id):
     messages.success(request, 'Review deleted!')
 
     return redirect(reverse('product_detail', args=[review.product.id]))
+
 
 def update_product_rating(product):
     """ Update the rating field for the product """

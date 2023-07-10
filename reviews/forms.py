@@ -17,7 +17,7 @@ class ReviewForm(forms.ModelForm):
     rating = forms.ChoiceField(label='How will you rate your experience with this product?',
                                choices=RATINGS,
                                widget=forms.RadioSelect)
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

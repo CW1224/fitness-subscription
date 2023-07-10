@@ -3,6 +3,7 @@ from .models import Event
 
 # Register your models here.
 
+
 class EventAdmin(admin.ModelAdmin):
     list_display = (
         'event_title', 'content', 'event_on', 'location'

@@ -208,7 +208,7 @@ The website worked well on all of them. None of them distorts the website in any
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to check that all the code written in css were correct. Since most of the HTML code was decorated with Bootstrap, there wasn't a lot of css code. 
 
 The terminal in gitpod was used to check for errors in my python code. 
-These were the initial problems that were associated with my code. These were easily resolved by adding in indentations, getting rid of white spaces and adding an extra line between classes in the views.py file. The lines that were too long and caused a problem were shortened by separating them onto separate lines. Finally only some minor errors that were already present in the python code upon installing the package are left. Below is a picture that shows no major error in the code.
+These were the initial problems that were associated with my code. These were easily resolved by adding in indentations, getting rid of white spaces and adding an extra line between classes in the views.py file. The lines that were too long and caused a problem were shortened by separating them onto separate lines. Finally only some minor errors that were already present in the python code upon installing the package are left.
 
 The Javascript that I have been using in this project came from an external source and when I pasted it in into ![JS Hint](https://jshint.com/), the system tells me that there were no errors that would have an impact on the code.
 

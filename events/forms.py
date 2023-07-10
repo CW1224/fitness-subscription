@@ -2,6 +2,7 @@ from django import forms
 from .models import Event
 from .widgets import CustomClearableFileInput
 
+
 class EventForm(forms.ModelForm):
 
     class Meta:
