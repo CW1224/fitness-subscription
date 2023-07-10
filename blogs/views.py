@@ -16,6 +16,7 @@ def show_blogs(request):
 
     return render(request, template, context)
 
+@login_required
 def show_my_blogs(request):
     """ A view to show the user's product reviews """
     blogs = Blog.objects.filter(blog_author=request.user)
