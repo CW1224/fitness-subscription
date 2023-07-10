@@ -211,3 +211,168 @@ The terminal in gitpod was used to check for errors in my python code.
 These were the initial problems that were associated with my code. These were easily resolved by adding in indentations, getting rid of white spaces and adding an extra line between classes in the views.py file. The lines that were too long and caused a problem were shortened by separating them onto separate lines. Finally only some minor errors that were already present in the python code upon installing the package are left. Below is a picture that shows no major error in the code.
 
 The Javascript that I have been using in this project came from an external source and when I pasted it in into ![JS Hint](https://jshint.com/), the system tells me that there were no errors that would have an impact on the code.
+
+
+### General
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Main Logo Link | Clicking the link redirects to the home page. | Pass |
+Products Link | Clicking the link redirects to the products page. | Pass |
+About Link | Clicking the link redirects to about page. | Pass |
+Events Link | Clicking the link redirects to the events page. | Pass |
+Blogs Link | Clicking the link redirects to the all blogs page. | Pass |
+My Account Icon - Register Link | Clicking the link redirects to the account sign up page. | Pass |
+My Account Icon - Login Link | Clicking the link redirects to the account sign in page. | Pass |
+My Account Icon - Logout link | Clicking the link redirects to the account sign out page. | Pass |
+My Account Icon - Add Product Link | Clicking the link redirects to the add product page. | Pass |
+My Account Icon - My Profile Link | Clicking the link redirects to the profile page. | Pass |
+My Account Icon - My Reviews Link | Clicking the link redirects to the reviews page. | Pass |
+Shopping Cart Icon | Clicking the link redirects to the shopping cart. | Pass |
+Search Bar | Clicking the link redirects to the products page and display the matching products. | Pass |
+Privacy Policy Link | Clicking the link redirects to the policy page. | Pass |
+Newsletter Form | Email address gets registered to the database when submitting the form. | Pass |
+
+
+#### Home Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Links | Clicking any of the links will redirect to the destination page | Pass |
+Down Arrow Link | Clicking the link redirects to about section in the home page. | Pass |
+
+
+#### Products Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Product Navigation Bar Links | Clicking any of the links will filter the products on that category. | Pass |
+Sort By Selector | Sort by functionality sort the products depending on the selection. | Pass |
+Product Image | Clicking the image redirect to the product details page for that specific product. | Pass |
+Product Edit Link | Clicking the link redirects to the edit product page. | Pass |
+Product Delete Link | Clicking the link delete the product from the database. | Pass |
+
+
+#### Product Details Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Product Navigation Bar Links | Clicking any of the links will redirect to the products page and filter the products on that category. | Pass
+Product Image | Clicking the image opens it on a separate tab. | Pass |
+Favorites Icon | Clicking the icon toggle the product on the favorites database. | Pass |
+Favorites Icon | The icon will change depending on whether it is a favorite or not | Pass & Fail |
+Product Edit Link | Clicking the link redirects to the edit product page. | Pass |
+Product Delete Link | Clicking the link deletes the product from the database. | Pass |
+Decrease Quantity Button | Decreases the quantity on the input form. | Pass |
+Increase Quantity Button | Increases the quantity on the input form. | Pass |
+Keep Shopping Button | Clicking the button redirects to the products page. | Pass |
+Add To Bag Button | Clicking the button adds the specified quantity of the product to the shopping bag. | Pass |
+Leave A Review Button | Clicking the button redirects to the add review page. | Pass |
+
+
+#### Add Product Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Select Image Button | Clicking the button allows to add an image to the form | Pass |
+Add Product Form | Product gets registered to the database when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the products page. | Pass |
+
+
+#### Edit Product Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Select Image Button | Clicking the button allows to add or replace the image | Pass |
+Edit Product Form | Product gets updated when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the products page. | Pass |
+
+
+#### Shopping Bag Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Decrease Quantity Button | Decreases the quantity on the input form. | Pass |
+Increase Quantity Button | Increases the quantity on the input form. | Pass |
+Update Link | Clicking the link update the product quantity on the shopping bag. | Pass
+Delete Link | Clicking the link removed the product from the shopping bag. | Pass
+Keep Shopping Button | Clicking the button redirects to the products page. | Pass |
+Secure Checkout Button | Clicking the button redirects to the checkout page. | Pass |
+
+
+#### Checkout Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Checkout Form | An order gets created when submitted the form. | Pass |
+Login Link | Clicking the link redirects to the account sign in page. | Pass |
+Register Link | Clicking the link redirects to the account sign up page. | Pass |
+Save Information Check | Checking the box update the user's profile information during the checkout process. | Pass |
+Adjust Bag Link | Clicking the link redirects to shopping bag page. | Pass |
+
+
+#### Profile Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Update Information Form | User's information gets updated when submitting the form. | Pass |
+
+
+#### Reviews Page
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Product Link | Clicking the link redirect to the product details page. | Pass |
+Edit Link | Clicking the link redirect to the edit review page. | Pass |
+Delete Link | Clicking the link deletes the review from the database. | Pass |
+
+
+#### Add Review Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Add Review Form | Review gets registered to the database when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the product details page. | Pass |
+
+
+#### Edit Review Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Edit Review Form | Review gets updated when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the products page. | Pass |
+
+
+#### Add Blog Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Add Blog Form | Blog gets registered to the database when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the blog page. | Pass |
+
+
+#### Edit Blog Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Edit Blog Form | Blog gets updated when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the blog page. | Pass |
+
+#### Add Event Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Add Event Form | Event gets registered to the database when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the event page. | Pass |
+
+
+#### Edit Event Page
+
+Element | Expected Outcome | Pass/Fail |
+--- | --- | --- |
+Edit Event Form | Event gets updated when submitting the form. | Pass |
+Cancel Button | Clicking the button redirects to the event page. | Pass |
+
+
+## Unit Testing
+
+Unit tests were written for views on the favorites and reviews app, practicing test-driven development on those methods.
