@@ -297,6 +297,10 @@ Only superusers can add events or products as well as editing or deleting them.
 ![add_event](assets/image/add_event.png)
 ![add_product](assets/image/add-product.png)
 
+This is the events page.
+
+![events](assets/image/eventa.png)
+
 ## 2.5 View Product and product detail page
 
 Any user of the website whether they are logged in or not can view the products and product details page.
@@ -305,6 +309,9 @@ Any user of the website whether they are logged in or not can view the products 
 
 When the user presses a product image, they will be brought to that product's detail page.
 ![product_detail](assets/image/product-detail-page.png)
+
+The user can also leave a review for the product that others users can see.
+![review](assets/image/review.png)
 
 ## 2.6 Favorites and quantity
 
@@ -316,21 +323,33 @@ This is the favorites page in which all the user's favorites are stored.
 
 ![favorite_store](assets/image/favorites.png)
 
-## 2.7 Back to top
+## 2.65 Back to top
 
 This little arrow when combined with some Javascript allows the user to move back to the top of the page when they are anywhere but the top of the page.
 
 ![arrow](assets/image/back-to-top.png)
 
-## 2.8 Bag
+## 2.7 Bag
 
 The bag shows a list of all the items that the user has added to the bag while also providing the user with the functionality of adjusting the quantity or deleting the product from the bag.
 
 ![show_bag](assets/image/bag.png)
 
-## 2.9 Checkout and confirmation
+## 2.8 Checkout and confirmation
 
-Stripe is used in the checkout section of the website. A webhook would be sent even if the user accidently logs out or leaves the page in the middle of a transaction so that a record is kept. A confirmation email alongside
+Stripe is used in the checkout section of the website. A webhook would be sent even if the user accidently logs out or leaves the page in the middle of a transaction so that a record is kept. A confirmation email alongside a confirmation notification will be sent to the user.
+
+This is what the user will see once the payment comes through.
+![payment_success](assets/image/confirmation.png)
+
+This is the checkout page.
+![checkout_page](assets/image/checkout.png)
+
+## 2.9 Footer
+
+The footer contains the policy, the website's facebook page and an option to subscribe to the website so that the user can receive the latest news and offers.
+
+![footer](assets/image/footer.png)
 
 # 3. Technology
 
