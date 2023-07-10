@@ -224,6 +224,86 @@ According to the strategy table, not all features can be implemented in the firs
 
 * View events
 
+## Marketing
+
+
+### Search Engine Optimisation
+
+Search Engine Optimisation
+
+To improve the search index rating on Google, research was carried out using a number of tools, such as [Wordtracker](https://www.wordtracker.com/) to search for relevant keywords to use in meta tags in the project head element.
+
+Search terms such as plastic free products and eco friendly were used to return popular keywords. A number of short and long tail keywords were then selected and inputted into the head element of base.html.
+
+The selected keywords are:
+
+* eco friendly products
+* sustainability products
+* environmentally friendly
+* non plastic materials
+* reusable products
+* non plastic products
+* plastic-free products
+
+These keywords remain a work in progress however. As is normal practise, in production these keywords would be monitored via, for example, Google Analytics, to determine which terms are driving traffic to the site. 
+
+These terms could then be added to, or removed as deemed necessary, and with continual improvement and refinement of these over time should utlimately assist in the site ranking higher on Google.
+
+
+### Business Model
+
+
+#### Company description
+
+NoPlast is a B2C company that offer our customers plastic- free alternatives to plastic products in order to help us in our mission, to reduce the plastic consumption. Additionally, we provide information to create consciousness about plastic pollution and help our customers to take active choices in order to reduce their plastic waste.
+
+
+#### Customers
+
+Our thought costumers are millennials and younger, singles and families who have an environmental interest and a will to reduce their plastic consumption.
+
+#### Competitors
+
+We see that we have three types of competitors. 
+There are companies that have the same interest and vision as NoPlast. But they are mainly focusing on a smaller range of products, such as baby products, hygiene and makeup, or kitchen products, while we have a wider range of products (Lilla Lammet, Less Plastic, Ecco-Verde, etc.).
+The other type of competitors that are bigger and have all kinds of products, but they supply both environmental and plastic products and it is therefore not as easy to get a good overview and get inspired of new plastic free products, and environmental tips at the same place. (Åhlens, IKEA etc.).
+There are some companies that offer the same kind of range as we do (Be Plast Free and Rekoshoppen). But they are not on the informative aspect to solve the plastic waste problem.
+
+#### SWOT analysis
+
+**Strengths**
+
+* Many environmentally friendly products gathered in the same home page.
+* Information for the customer that gives them a deeper insight regarding plastic pollution and how to make better choices. 
+* True interest for our mission within the company.
+
+**Weaknesses**
+
+* New brand
+* Small marketing budget
+
+**Opportunities**
+
+* Not many companies that have gathered a wide range of products on the same page in Sweden.
+* Cooperation with bigger brands and organizations.
+
+**Threats**
+
+* Shipping problem with products produced in other countries due to covid and other unpredictable factors.
+* Shipping costs that is variable
+* Bigger companies that can change their product supply.
+* Smaller environmental friendly companies that can wider their supply from one type of products.
+* Other similar companies can get more PR and bigger market share. 
+
+**Marketing Strategy**
+
+Due to our small marketing budget, we have decided to start a Facebook Business page and interact with our customers and bigger organizations within the environmentally friendly branch through that marketing channel. For our buying customers we have made it easy to sign up for our newsletter, in order to make them even more loyal and facilitate for them to share tips and products with their friends and family. Now, in this stage of starting a new company we rely a lot on “word of mouth” and that cooperation’s with organizations and influencers to bring value to the company by attracting more visitors for our homepage and more buying customers.
+
+**Facebook Business page**
+
+See the live Facebook Business page [here](https://www.facebook.com/NoPlast-107480112033116).
+![NoPlast Facebook Business page image](assets/readme/facebook-business-page.png)
+
 # 2. Features
 
 [Return to the Table of Contents](#table-of-contents)
